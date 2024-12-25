@@ -37,31 +37,11 @@ const Register = () => {
 
     createUser(email, password)
       .then(userCredential => {
-        // Signed up
-        // const user = userCredential.user;
-        // console.log(user);
-
-        // Send user data to database
-        fetch('https://visa-flow-server.vercel.app/users', {
-          method: 'post',
-          headers: {
-            'content-type': 'application/json',
-          },
-          body: JSON.stringify(userDetails),
-        })
-          .then(res => res.json())
-          .then(data => {
-            // console.log('data send to database successfully', data);
-          });
-
         notifySuccess('Account created successfully');
-        // ...
         navigate('/');
       })
       .catch(error => {
         const errorCode = error.code;
-        // const errorMessage = error.message;
-        // console.log(errorCode);
 
         if (errorCode === 'auth/email-already-in-use')
           return notifyError('This email already exists');

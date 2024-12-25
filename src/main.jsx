@@ -14,6 +14,7 @@ import Register from './pages/register/Register.jsx';
 import PrivateRoute from './routes/PrivateRoute.jsx';
 import LikedArtifacts from './pages/liked_artifacts/LikedArtifacts.jsx';
 import MyArtifacts from './pages/my_artifacts/MyArtifacts.jsx';
+import { Toaster } from 'react-hot-toast';
 
 const router = createBrowserRouter([
   {
@@ -67,6 +68,7 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <Toaster />
     <AuthProvider>
       <RouterProvider router={router} />
     </AuthProvider>
