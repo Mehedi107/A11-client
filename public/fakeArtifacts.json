@@ -1,0 +1,75 @@
+[
+  {
+    "id": 1,
+    "image": "https://static.trustedtranslations.com/wp-content/uploads/2022/08/Rosetta-scaled.jpeg",
+    "name": "Rosetta Stone",
+    "description": "A granodiorite stele inscribed with three versions of a decree issued in Memphis, Egypt.",
+    "likeCount": 125,
+    "viewDetails": "https://en.wikipedia.org/wiki/Rosetta_Stone"
+  },
+  {
+    "id": 2,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE0R5Zo7zOki3CeikwI0FXNSy4XbDtWWMGBA&s",
+    "name": "Antikythera Mechanism",
+    "description": "An ancient Greek analog computer used to predict astronomical positions.",
+    "likeCount": 89,
+    "viewDetails": "https://en.wikipedia.org/wiki/Antikythera_mechanism"
+  },
+  {
+    "id": 3,
+    "image": "https://globalvolunteers.org/wp-content/uploads/2016/12/terracotta-army.jpg",
+    "name": "Terracotta Army",
+    "description": "A collection of terracotta sculptures depicting the armies of Qin Shi Huang, the first Emperor of China.",
+    "likeCount": 210,
+    "viewDetails": "https://en.wikipedia.org/wiki/Terracotta_Army"
+  },
+  {
+    "id": 4,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjIsha9YVKYd6o6v3brqFNd3UD1E_oMckmtA&s",
+    "name": "Dead Sea Scrolls",
+    "description": "Ancient Jewish manuscripts discovered in the Qumran Caves near the Dead Sea.",
+    "likeCount": 155,
+    "viewDetails": "https://en.wikipedia.org/wiki/Dead_Sea_Scrolls"
+  },
+  {
+    "id": 5,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSXBtifABWxRvf4PL-zWApSkO6CbrNg2cQOQ&s",
+    "name": "Machu Picchu",
+    "description": "A 15th-century Inca citadel located in the Andes Mountains in Peru.",
+    "likeCount": 300,
+    "viewDetails": "https://en.wikipedia.org/wiki/Machu_Picchu"
+  },
+
+  {
+    "id": 6,
+    "image": "https://www.artnews.com/wp-content/uploads/2022/12/GettyImages-921707628.jpg?w=1200",
+    "name": "Moai Statues",
+    "description": "Monolithic human figures carved by the Rapa Nui people on Easter Island.",
+    "likeCount": 190,
+    "viewDetails": "https://en.wikipedia.org/wiki/Moai"
+  },
+  {
+    "id": 7,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Stonehenge_-_panoramio_%28cropped%29.jpg",
+    "name": "Stonehenge",
+    "description": "A prehistoric monument consisting of a ring of standing stones in Wiltshire, England.",
+    "likeCount": 275,
+    "viewDetails": "https://en.wikipedia.org/wiki/Stonehenge"
+  },
+  {
+    "id": 8,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Tutmask.jpg",
+    "name": "King Tut's Mask",
+    "description": "The funerary mask of Tutankhamun, an ancient Egyptian pharaoh.",
+    "likeCount": 220,
+    "viewDetails": "https://en.wikipedia.org/wiki/Tutankhamun%27s_mask"
+  },
+  {
+    "id": 9,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Liberty_Bell_2008.JPG",
+    "name": "Liberty Bell",
+    "description": "An iconic symbol of American independence, located in Philadelphia, Pennsylvania.",
+    "likeCount": 150,
+    "viewDetails": "https://en.wikipedia.org/wiki/Liberty_Bell"
+  }
+]

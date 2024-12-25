@@ -15,6 +15,7 @@ import PrivateRoute from './routes/PrivateRoute.jsx';
 import LikedArtifacts from './pages/liked_artifacts/LikedArtifacts.jsx';
 import MyArtifacts from './pages/my_artifacts/MyArtifacts.jsx';
 import { Toaster } from 'react-hot-toast';
+import ArtifactDetails from './pages/artifact_details/ArtifactDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
-        path: 'home',
+        path: '/',
         element: <Home></Home>,
       },
       {
@@ -35,6 +36,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AddArtifacts></AddArtifacts>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: 'artifacts/:id',
+        element: (
+          <PrivateRoute>
+            <ArtifactDetails></ArtifactDetails>
           </PrivateRoute>
         ),
       },
