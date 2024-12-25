@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react';
 import Banner from '../../components/banner/Banner';
 import FeaturedArtifact from '../../components/card/FeaturedArtifact';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import DiscoverArtifactCategory from '../../components/discover_artifact_category/DiscoverArtifactCategory';
+import UserContribution from '../../components/user_contribution/UserContribution';
 
 const Home = () => {
   const [cardContent, setCardContent] = useState([]);
@@ -37,7 +40,16 @@ const Home = () => {
             ></FeaturedArtifact>
           ))}
         </div>
+        <div className="flex justify-center items-center mt-5">
+          <Link className="btn" to={'/all-artifacts'}>
+            See all Artifacts
+          </Link>
+        </div>
       </div>
+      {/* Discover Artifact Category */}
+      <DiscoverArtifactCategory></DiscoverArtifactCategory>
+      {/* User contribution spotlight */}
+      <UserContribution></UserContribution>
     </div>
   );
 };
