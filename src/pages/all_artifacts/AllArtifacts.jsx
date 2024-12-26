@@ -11,17 +11,19 @@ const AllArtifacts = () => {
       .then(res => setArtifacts(res.data));
   }, []);
   return (
-    <div className="container mx-auto p-5">
-      <Helmet>
-        <title>All Artifacts</title>
-      </Helmet>
-      <div className="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {artifacts.map(artifact => (
-          <FeaturedArtifact
-            key={artifact._id}
-            content={artifact}
-          ></FeaturedArtifact>
-        ))}
+    <div className="bg-tertiary">
+      <div className="container mx-auto p-5">
+        <Helmet>
+          <title>All Artifacts</title>
+        </Helmet>
+        <div className="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {artifacts.map(artifact => (
+            <FeaturedArtifact
+              key={artifact._id}
+              content={artifact}
+            ></FeaturedArtifact>
+          ))}
+        </div>
       </div>
     </div>
   );

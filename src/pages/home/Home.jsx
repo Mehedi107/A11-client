@@ -32,24 +32,29 @@ const Home = () => {
       </Helmet>
       <Banner></Banner>
       {/* Featured artifact section */}
-      <div className="container mx-auto px-5 py-20">
-        {/* Title */}
-        <h2 className="text-center text-2xl mb-8">Featured Artifacts</h2>
-        {/* Container */}
-        <div className=" grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {cardContent.map(content => (
-            <FeaturedArtifact
-              key={content._id}
-              content={content}
-            ></FeaturedArtifact>
-          ))}
-        </div>
-        <div className="flex justify-center items-center mt-5">
-          <Link className="btn" to={'/all-artifacts'}>
-            See all Artifacts
-          </Link>
+      <div className="bg-tertiary">
+        <div className="container mx-auto px-5 py-20">
+          {/* Title */}
+          <h2 className="text-center lg:text-4xl text-3xl  mb-8">
+            Featured Artifacts
+          </h2>
+          {/* Container */}
+          <div className=" grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {cardContent.map(content => (
+              <FeaturedArtifact
+                key={content._id}
+                content={content}
+              ></FeaturedArtifact>
+            ))}
+          </div>
+          <div className="flex justify-center items-center mt-5">
+            <Link className="btn btn-lg bg-secondary bor" to={'/all-artifacts'}>
+              See all Artifacts
+            </Link>
+          </div>
         </div>
       </div>
+
       {/* Discover Artifact Category */}
       <DiscoverArtifactCategory></DiscoverArtifactCategory>
       {/* User contribution spotlight */}

@@ -44,11 +44,11 @@ const Login = () => {
   const googleLogin = () => loginWithGoogle().then(() => navigate('/'));
 
   return (
-    <div className="flex justify-center items-center min-h-[calc(100vh-68px)] bg-clr-primary ">
+    <div className="flex justify-center items-center min-h-100vh bg-accent">
       <Helmet>
         <title>Login</title>
       </Helmet>
-      <div className="w-full max-w-md  m-5 p-8 rounded-lg shadow-lg bg-white">
+      <div className="w-full max-w-md  m-5 p-8 rounded-lg shadow-lg bg-tertiary">
         <h2 className="text-3xl text-center mb-6">Login</h2>
 
         <form onSubmit={loginUser}>
@@ -91,25 +91,28 @@ const Login = () => {
 
           <button
             type="submit"
-            className="btn  w-full mt-4 text-base hover:bg-clr-secondary bg-clr-secondary"
+            className="btn text-lg btn-block mt-4 hover:bg-primary hover:text-accent"
           >
             Login
           </button>
         </form>
 
-        <div className="divider divider-info ">Or</div>
+        <div className="divider divider-neutral ">Or</div>
 
         <div className="flex justify-center items-center space-x-4">
-          <button onClick={googleLogin} className="text-base btn btn-block">
+          <button
+            onClick={googleLogin}
+            className="text-base hover:bg-primary hover:text-accent btn btn-block"
+          >
             <FaGoogle />
-            Login with google
+            Login with Google
           </button>
         </div>
 
         <div className=" text-center mt-5">
           <p>
             Don&apos;t have account?{' '}
-            <Link className=" link" to="/register">
+            <Link className=" link text-primary" to="/register">
               Create Account
             </Link>{' '}
           </p>
