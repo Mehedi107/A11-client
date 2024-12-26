@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import avatar from '../../assets/avatar.png';
+import logo from '../../assets/logo.png';
 
 const Navbar = () => {
   const { user, signOutUser } = useContext(AuthContext);
@@ -23,10 +24,10 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="navbar px-4 border-b">
+    <nav className="navbar px-4 bg-primary">
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div tabIndex={0} role="button" className=" text-tertiary lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -44,20 +45,17 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu dropdown-content bg-white rounded-box z-[10] mt-3 w-52 p-2 shadow"
+            className="menu dropdown-content bg-tertiary rounded-box z-[10] mt-3 w-52 p-2 shadow"
           >
             {navLinks}
           </ul>
         </div>
         <NavLink to="/" className="text-xl">
-          {/* <img className="md:h-14 h-10" src={logo} alt="Logo" /> */}
-          <span className="inline-block text-xl md:text-2xl font-bold text-clr-primary">
-            Artifact Vault
-          </span>
+          <img className="md:h-14 h-10" src={logo} alt="Logo" />
         </NavLink>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 lg:text-lg md:text-base">
+        <ul className="menu menu-horizontal px-1 lg:text-lg text-accent">
           {navLinks}
         </ul>
       </div>
@@ -96,13 +94,16 @@ const Navbar = () => {
           <Link
             onClick={() => signOutUser()}
             to="/"
-            className="btn border-none ml-2 hover:bg-clr-secondary bg-clr-secondary"
+            className="btn border-none ml-2 bg-secondary text-accent"
           >
             Logout
           </Link>
         ) : (
           <>
-            <Link to="/login" className="btn border-none ml-2">
+            <Link
+              to="/login"
+              className=" btn border-none bg-secondary text-accent ml-2 hover:text-primary"
+            >
               Login
             </Link>
             {/* <Link to="/register" className="btn border-none ml-2">
