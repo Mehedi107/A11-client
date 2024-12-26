@@ -6,6 +6,7 @@ import {
   notifyError,
   notifySuccess,
 } from '../../provider/AuthProvider';
+import { Helmet } from 'react-helmet';
 
 const Register = () => {
   const { createUser, loginWithGoogle } = useContext(AuthContext);
@@ -51,8 +52,12 @@ const Register = () => {
   };
 
   const googleLogin = () => loginWithGoogle().then(() => navigate('/'));
+
   return (
     <div className="flex justify-center items-center min-h-[calc(100vh-68px)] bg-clr-primary">
+      <Helmet>
+        <title>Register</title>
+      </Helmet>
       <div className="w-full max-w-md  m-5 p-6 rounded-lg shadow-lg bg-white">
         <h2 className="text-3xl  text-center mb-4">Register</h2>
 

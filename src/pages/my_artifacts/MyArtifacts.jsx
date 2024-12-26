@@ -2,10 +2,13 @@ import axios from 'axios';
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const MyArtifacts = () => {
   const { user } = useContext(AuthContext);
   const [myArtifacts, setMyArtifacts] = useState([]);
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     artifactId: '',
     name: '',
@@ -98,6 +101,8 @@ const MyArtifacts = () => {
               text: 'Your file has been deleted.',
               icon: 'success',
             });
+
+            navigate('/all-artifacts');
           })
           .catch(err => {
             console.error('Error deleting artifact:', err);
@@ -116,8 +121,20 @@ const MyArtifacts = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  console.log(myArtifacts);
+
   return (
     <div className="container mx-auto p-5">
+      <Helmet>
+        <title>My Artifacts</title>
+      </Helmet>
+      {myArtifacts.length || (
+        <div className="h-[calc(100vh-76px-220px)] flex justify-center items-center col-span-3">
+          <p className="text-center  text-3xl ">
+            Currently you have no Artifacts
+          </p>
+        </div>
+      )}
       <div className="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {myArtifacts.map(artifact => (
           <div

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { AuthContext } from '../../provider/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 const AddArtifact = () => {
   const { user } = useContext(AuthContext);
@@ -59,6 +60,9 @@ const AddArtifact = () => {
 
   return (
     <div className="container mx-auto px-5 py-16">
+      <Helmet>
+        <title>Add Artifacts</title>
+      </Helmet>
       <h2 className="text-2xl text-center mb-8">Add a New Artifact</h2>
       <form
         onSubmit={handleSubmit}

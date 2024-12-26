@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
 
 const ArtifactDetails = () => {
@@ -40,6 +41,9 @@ const ArtifactDetails = () => {
 
   return (
     <div className="container p-5 mx-auto">
+      <Helmet>
+        <title>Artifacts Details</title>
+      </Helmet>
       <div className="card lg:card-side bg-base-100 shadow-xl">
         <figure className="min-w-56 max-w-96">
           <img src={artifact?.image} alt={artifact?.name || 'Artifact Image'} />

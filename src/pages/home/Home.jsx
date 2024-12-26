@@ -5,6 +5,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import DiscoverArtifactCategory from '../../components/discover_artifact_category/DiscoverArtifactCategory';
 import UserContribution from '../../components/user_contribution/UserContribution';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
   const [cardContent, setCardContent] = useState([]);
@@ -26,6 +27,9 @@ const Home = () => {
 
   return (
     <div className="min-h-full ">
+      <Helmet>
+        <title>Home</title>
+      </Helmet>
       <Banner></Banner>
       {/* Featured artifact section */}
       <div className="container mx-auto px-5 py-20">

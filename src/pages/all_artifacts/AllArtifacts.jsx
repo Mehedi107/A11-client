@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import FeaturedArtifact from '../../components/card/FeaturedArtifact';
+import { Helmet } from 'react-helmet';
 
 const AllArtifacts = () => {
   const [artifacts, setArtifacts] = useState([]);
@@ -11,6 +12,9 @@ const AllArtifacts = () => {
   }, []);
   return (
     <div className="container mx-auto p-5">
+      <Helmet>
+        <title>All Artifacts</title>
+      </Helmet>
       <div className="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {artifacts.map(artifact => (
           <FeaturedArtifact
