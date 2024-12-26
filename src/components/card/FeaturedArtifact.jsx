@@ -16,7 +16,7 @@ const FeaturedArtifact = ({ content }) => {
       </figure>
       <div className="card-body">
         <h2 className="card-title">{content.name}</h2>
-        <p>{content.description}</p>
+        <p>{content.description || content.context}</p>
         <div className="card-actions justify-between items-center mt-5">
           <button className="bg-base-200 py-3 px-4 rounded-md flex gap-2 justify-center items-center">
             <CiHeart className="text-xl" />

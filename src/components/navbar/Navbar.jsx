@@ -73,7 +73,7 @@ const Navbar = () => {
               <div className="w-10 rounded-full">
                 <img
                   alt="Tailwind CSS Navbar component"
-                  src={user && user?.photoURL ? user.photoURL : avatar}
+                  src={user?.photoURL ? user.photoURL : avatar}
                 />
               </div>
             </div>

@@ -47,29 +47,5 @@
     "description": "Monolithic human figures carved by the Rapa Nui people on Easter Island.",
     "likeCount": 190,
     "viewDetails": "https://en.wikipedia.org/wiki/Moai"
-  },
-  {
-    "id": 7,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Stonehenge_-_panoramio_%28cropped%29.jpg",
-    "name": "Stonehenge",
-    "description": "A prehistoric monument consisting of a ring of standing stones in Wiltshire, England.",
-    "likeCount": 275,
-    "viewDetails": "https://en.wikipedia.org/wiki/Stonehenge"
-  },
-  {
-    "id": 8,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Tutmask.jpg",
-    "name": "King Tut's Mask",
-    "description": "The funerary mask of Tutankhamun, an ancient Egyptian pharaoh.",
-    "likeCount": 220,
-    "viewDetails": "https://en.wikipedia.org/wiki/Tutankhamun%27s_mask"
-  },
-  {
-    "id": 9,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Liberty_Bell_2008.JPG",
-    "name": "Liberty Bell",
-    "description": "An iconic symbol of American independence, located in Philadelphia, Pennsylvania.",
-    "likeCount": 150,
-    "viewDetails": "https://en.wikipedia.org/wiki/Liberty_Bell"
   }
 ]

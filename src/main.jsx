@@ -8,7 +8,7 @@ import ErrorPage from './pages/error_page/ErrorPage.jsx';
 import AuthProvider from './provider/AuthProvider.jsx';
 import Home from './pages/home/Home.jsx';
 import AllArtifacts from './pages/all_artifacts/AllArtifacts.jsx';
-import AddArtifacts from './pages/add_artifacts/AddArtifacts.jsx';
+import AddArtifact from './pages/add_artifacts/AddArtifact.jsx';
 import Login from './pages/login/Login.jsx';
 import Register from './pages/register/Register.jsx';
 import PrivateRoute from './routes/PrivateRoute.jsx';
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
         path: 'add-artifacts',
         element: (
           <PrivateRoute>
-            <AddArtifacts></AddArtifacts>
+            <AddArtifact></AddArtifact>
           </PrivateRoute>
         ),
       },
