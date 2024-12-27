@@ -10,6 +10,7 @@ import {
   signOut,
 } from 'firebase/auth';
 import toast from 'react-hot-toast';
+import axios from 'axios';
 
 export const notifyError = msg => toast.error(msg);
 export const notifySuccess = msg => toast.success(msg);
@@ -40,8 +41,29 @@ const AuthProvider = ({ children }) => {
 
   // Show Logged in user
   useEffect(() => {
-    const unSubscribe = onAuthStateChanged(auth, user => {
+    const unSubscribe = onAuthStateChanged(auth, async user => {
       setUser(user);
+      if (user?.email) {
+        // Get jwt token form server
+        const { data } = await axios.post(
+          `${import.meta.env.VITE_SERVER_URL}/jwt`,
+          {
+            email: user?.email,
+          },
+          { withCredentials: true }
+        );
+        console.log(data);
+      } else {
+        setUser(user);
+        // Clear cookie
+        const { data } = await axios.get(
+          `${import.meta.env.VITE_SERVER_URL}/logout`,
+          {
+            withCredentials: true,
+          }
+        );
+        console.log(data);
+      }
       setLoading(false);
     });
     return () => unSubscribe();

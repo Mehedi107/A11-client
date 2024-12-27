@@ -22,12 +22,8 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    // navigate('/');
     login(email, password)
-      .then(userCredential => {
-        // Signed in
-        // const user = userCredential.user;
-        // console.log(user);
+      .then(() => {
         notifySuccess('Login successful');
 
         navigate('/');

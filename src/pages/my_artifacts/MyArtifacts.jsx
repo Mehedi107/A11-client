@@ -23,7 +23,9 @@ const MyArtifacts = () => {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_SERVER_URL}/my-artifact/${user.email}`)
+      .get(`${import.meta.env.VITE_SERVER_URL}/my-artifact/${user.email}`, {
+        withCredentials: true,
+      })
       .then(res => setMyArtifacts(res.data));
   }, [user.email]);
 

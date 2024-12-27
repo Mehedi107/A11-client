@@ -88,7 +88,7 @@ const ArtifactDetails = () => {
               </p>
               <button
                 onClick={handleLike}
-                className={`btn text-lg btn-wide mt-4 ${
+                className={`btn text-lg btn-wide text-accent mt-4 ${
                   isLiked
                     ? 'bg-red-500 hover:bg-red-600'
                     : 'bg-primary hover:bg-primary'

@@ -9,7 +9,9 @@ const LikedArtifacts = () => {
   const [myLikedArtifacts, setMyLikedArtifacts] = useState([]);
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_SERVER_URL}/liked-artifact/${user.email}`)
+      .get(`${import.meta.env.VITE_SERVER_URL}/liked-artifact/${user.email}`, {
+        withCredentials: true,
+      })
       .then(res => {
         console.log('Liked artifacts:', res.data);
         setMyLikedArtifacts(res.data);
