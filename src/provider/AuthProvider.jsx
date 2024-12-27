@@ -52,7 +52,7 @@ const AuthProvider = ({ children }) => {
           },
           { withCredentials: true }
         );
-        console.log(data);
+        // console.log(data);
       } else {
         setUser(user);
         // Clear cookie
@@ -62,7 +62,7 @@ const AuthProvider = ({ children }) => {
             withCredentials: true,
           }
         );
-        console.log(data);
+        // console.log(data);
       }
       setLoading(false);
     });

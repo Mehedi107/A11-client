@@ -50,12 +50,12 @@ const MyArtifacts = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(formData);
+    // console.log(formData);
 
     axios
       .put(`${import.meta.env.VITE_SERVER_URL}/artifacts`, formData)
       .then(res => {
-        console.log(res);
+        // console.log(res);
         // close modal
         document.getElementById('my_modal_1').close();
 
@@ -96,7 +96,7 @@ const MyArtifacts = () => {
         axios
           .delete(`${import.meta.env.VITE_SERVER_URL}/artifacts/${id}`)
           .then(res => {
-            console.log(res);
+            // console.log(res);
 
             // Update the UI by removing the deleted artifact from the state
             setMyArtifacts(prevArtifacts =>
@@ -131,7 +131,7 @@ const MyArtifacts = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  console.log(myArtifacts);
+  // console.log(myArtifacts);
 
   return (
     <div className="bg-accent">

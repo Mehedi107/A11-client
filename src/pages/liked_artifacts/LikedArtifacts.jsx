@@ -13,7 +13,7 @@ const LikedArtifacts = () => {
         withCredentials: true,
       })
       .then(res => {
-        console.log('Liked artifacts:', res.data);
+        // console.log('Liked artifacts:', res.data);
         setMyLikedArtifacts(res.data);
       })
       .catch(error => {
