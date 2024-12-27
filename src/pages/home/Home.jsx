@@ -48,7 +48,10 @@ const Home = () => {
             ))}
           </div>
           <div className="flex justify-center items-center mt-5">
-            <Link className="btn btn-lg bg-secondary bor" to={'/all-artifacts'}>
+            <Link
+              className="btn btn-lg bg-primary text-accent mt-5 hover:bg-primary"
+              to={'/all-artifacts'}
+            >
               See all Artifacts
             </Link>
           </div>

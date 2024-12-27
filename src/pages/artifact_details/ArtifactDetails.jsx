@@ -1,21 +1,26 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
+import {
+  AuthContext,
+  notifyError,
+  notifySuccess,
+} from '../../provider/AuthProvider';
 
 const ArtifactDetails = () => {
+  const { user } = useContext(AuthContext);
   const { id } = useParams();
   const [artifact, setArtifact] = useState(null);
-  const [isLiking, setIsLiking] = useState(false);
 
   // Fetch artifact details from the server
   useEffect(() => {
     const fetchArtifactData = async () => {
       try {
-        const response = await axios.get(
+        const { data } = await axios.get(
           `${import.meta.env.VITE_SERVER_URL}/artifacts/${id}`
         );
-        setArtifact(response.data);
+        setArtifact(data);
       } catch (error) {
         console.error('Error fetching artifact:', error);
       }
@@ -23,20 +28,18 @@ const ArtifactDetails = () => {
     fetchArtifactData();
   }, [id]);
 
-  const handleLike = async () => {
-    if (isLiking) return; // Prevent multiple clicks
-    setIsLiking(true);
-
-    try {
-      const response = await axios.patch(
-        `${import.meta.env.VITE_SERVER_URL}/artifacts/${id}/like`
-      );
-      setArtifact(response.data); // Update the artifact state with the updated data
-    } catch (error) {
-      console.error('Error updating like count:', error);
-    } finally {
-      setIsLiking(false); // Reset button state
-    }
+  const handleLike = () => {
+    axios
+      .patch(`${import.meta.env.VITE_SERVER_URL}/artifacts/${id}/like`, {
+        email: user.email,
+      })
+      .then(res => {
+        setArtifact(res.data);
+        notifySuccess('Liked this artifact!');
+      })
+      .catch(error => {
+        notifyError(error.response.data.error);
+      });
   };
 
   return (
@@ -80,12 +83,9 @@ const ArtifactDetails = () => {
               </p>
               <button
                 onClick={handleLike}
-                disabled={isLiking}
-                className={`btn bg-primary hover:bg-primary btn-wide text-accent mt-4 ${
-                  isLiking ? 'loading' : ''
-                }`}
+                className={`btn text-lg bg-primary hover:bg-primary btn-wide text-accent mt-4`}
               >
-                {isLiking ? 'Liking...' : 'Like'}
+                Like
               </button>
             </div>
           </div>

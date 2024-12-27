@@ -14,13 +14,13 @@ const FeaturedArtifact = ({ content }) => {
         <div className="card-actions justify-between items-center mt-5">
           <span className="bg-tertiary font-medium py-3 px-4 rounded-md flex gap-2 justify-center items-center">
             <CiHeart className="text-xl" />
-            Likes 0
+            Likes {content.likeCount}
           </span>
           <Link
             to={`/artifacts/${content._id}`}
             className="btn bg-primary hover:bg-primary text-accent"
           >
-            See details
+            View details
           </Link>
         </div>
       </div>
