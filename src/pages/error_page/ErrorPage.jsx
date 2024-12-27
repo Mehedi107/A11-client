@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const ErrorPage = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen bg-accent">
       <div className="text-center">
         <h1 className="text-9xl font-bold text-clr-primary">404</h1>
         <p className="text-2xl font-semibold mt-4 text-gray-800">
@@ -13,7 +13,7 @@ const ErrorPage = () => {
         </p>
         <Link
           to="/"
-          className="bg-base-300 mt-6 inline-block px-6 py-3 rounded shadow transition"
+          className="bg-primary text-accent mt-6 inline-block px-6 py-3 rounded shadow transition"
         >
           Go Back Home
         </Link>

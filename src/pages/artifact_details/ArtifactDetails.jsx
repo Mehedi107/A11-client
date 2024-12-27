@@ -12,6 +12,7 @@ const ArtifactDetails = () => {
   const { user } = useContext(AuthContext);
   const { id } = useParams();
   const [artifact, setArtifact] = useState(null);
+  const [isLiked, setIsLiked] = useState(false);
 
   // Fetch artifact details from the server
   useEffect(() => {
@@ -21,12 +22,13 @@ const ArtifactDetails = () => {
           `${import.meta.env.VITE_SERVER_URL}/artifacts/${id}`
         );
         setArtifact(data);
+        setIsLiked(data.likedBy.includes(user.email)); // Check if the user already liked the artifact
       } catch (error) {
         console.error('Error fetching artifact:', error);
       }
     };
     fetchArtifactData();
-  }, [id]);
+  }, [id, user.email]);
 
   const handleLike = () => {
     axios
@@ -35,10 +37,13 @@ const ArtifactDetails = () => {
       })
       .then(res => {
         setArtifact(res.data);
-        notifySuccess('Liked this artifact!');
+        setIsLiked(!isLiked); // Toggle the isLiked state
+        notifySuccess(
+          isLiked ? 'Disliked this artifact!' : 'Liked this artifact!'
+        );
       })
       .catch(error => {
-        notifyError(error.response.data.error);
+        notifyError(error.response?.data?.error || 'Something went wrong!');
       });
   };
 
@@ -83,9 +88,13 @@ const ArtifactDetails = () => {
               </p>
               <button
                 onClick={handleLike}
-                className={`btn text-lg bg-primary hover:bg-primary btn-wide text-accent mt-4`}
+                className={`btn text-lg btn-wide mt-4 ${
+                  isLiked
+                    ? 'bg-red-500 hover:bg-red-600'
+                    : 'bg-primary hover:bg-primary'
+                }`}
               >
-                Like
+                {isLiked ? 'Dislike' : 'Like'}
               </button>
             </div>
           </div>

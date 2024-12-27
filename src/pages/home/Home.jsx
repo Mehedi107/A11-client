@@ -16,7 +16,7 @@ const Home = () => {
       .get(`${import.meta.env.VITE_SERVER_URL}/artifacts`)
       .then(function (response) {
         // handle success
-        console.log(response.data);
+        // console.log(response.data);
         setCardContent(response.data);
       })
       .catch(function (error) {
