@@ -19,7 +19,7 @@ const SectionFeatured = () => {
   });
   return (
     <div className="bg-tertiary">
-      <div className="container mx-auto px-3 sm:px-4 md:px-5 py-20">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-5 py-20">
         {/* Title */}
         <h2 className="text-center mb-8">Featured Artifacts</h2>
 

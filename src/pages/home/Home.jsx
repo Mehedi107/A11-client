@@ -1,9 +1,8 @@
-import DiscoverArtifactCategory from '../../sections/SectionArtifactCategory';
-import UserContribution from '../../components/user_contribution/UserContribution';
 import { Helmet } from 'react-helmet';
 import SectionFeatured from '../../sections/SectionFeatured';
 import SectionBanner from '../../sections/SectionBanner';
 import SectionArtifactCategory from '../../sections/SectionArtifactCategory';
+import SectionUserContribution from '../../sections/SectionUserContribution';
 
 const Home = () => {
   return (
@@ -14,7 +13,7 @@ const Home = () => {
       <SectionBanner />
       <SectionFeatured />
       <SectionArtifactCategory />
-      <UserContribution></UserContribution>
+      <SectionUserContribution />
     </div>
   );
 };
