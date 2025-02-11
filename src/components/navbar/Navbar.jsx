@@ -33,7 +33,7 @@ const Navbar = () => {
   );
 
   return (
-    <nav className=" bg-primary fixed z-20 w-full">
+    <nav className=" bg-primary fixed top-0 z-20 w-full">
       <div className="container mx-auto navbar px-4">
         {/* nav start */}
         <div className="navbar-start justify-start">

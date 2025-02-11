@@ -19,3 +19,12 @@ button {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  @apply !text-tertiary !text-xl md:!text-2xl lg:!text-3xl xl:!text-4xl;
+}
+
+.swiper-pagination-bullet-active {
+  @apply !bg-tertiary;
+}
