@@ -1,10 +1,10 @@
-// import axios from 'axios';
 import { CiHeart } from 'react-icons/ci';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const FeaturedArtifact = ({ content }) => {
+const FeaturedArtifactCard = ({ content }) => {
   return (
-    <div className="card card-compact bg-base-100 shadow-xl">
+    <div className="card rounded-lg card-compact bg-base-100 shadow-xl">
       <figure>
         <img src={content.image} className="h-40 w-full object-cover" />
       </figure>
@@ -28,4 +28,8 @@ const FeaturedArtifact = ({ content }) => {
   );
 };
 
-export default FeaturedArtifact;
+FeaturedArtifactCard.propTypes = {
+  content: PropTypes.object,
+};
+
+export default FeaturedArtifactCard;

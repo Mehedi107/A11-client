@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import FeaturedArtifact from '../../components/card/FeaturedArtifact';
+import FeaturedArtifact from '../../components/card/FeaturedArtifactCard';
 import { Helmet } from 'react-helmet';
 
 const AllArtifacts = () => {

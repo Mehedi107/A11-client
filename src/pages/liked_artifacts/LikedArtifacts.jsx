@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
-import FeaturedArtifact from '../../components/card/FeaturedArtifact';
+import FeaturedArtifact from '../../components/card/FeaturedArtifactCard';
 import { Helmet } from 'react-helmet';
 
 const LikedArtifacts = () => {

@@ -16,6 +16,9 @@ import LikedArtifacts from './pages/liked_artifacts/LikedArtifacts.jsx';
 import MyArtifacts from './pages/my_artifacts/MyArtifacts.jsx';
 import { Toaster } from 'react-hot-toast';
 import ArtifactDetails from './pages/artifact_details/ArtifactDetails.jsx';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
   {
@@ -78,8 +81,10 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Toaster />
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </QueryClientProvider>
   </StrictMode>
 );
