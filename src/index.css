@@ -16,6 +16,9 @@ button {
 @tailwind components;
 @tailwind utilities;
 
+h2 {
+  @apply text-2xl sm:text-3xl md:text-4xl;
+}
 .swiper-button-prev::after,
 .swiper-button-next::after {
   @apply !text-tertiary !text-xl md:!text-2xl lg:!text-3xl xl:!text-4xl;

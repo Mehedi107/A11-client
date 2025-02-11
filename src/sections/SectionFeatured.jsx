@@ -21,9 +21,7 @@ const SectionFeatured = () => {
     <div className="bg-tertiary">
       <div className="container mx-auto px-3 sm:px-4 md:px-5 py-20">
         {/* Title */}
-        <h2 className="text-center lg:text-4xl text-3xl mb-8">
-          Featured Artifacts
-        </h2>
+        <h2 className="text-center mb-8">Featured Artifacts</h2>
 
         {/* while fetching data */}
         {isLoading && (
