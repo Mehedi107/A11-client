@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   AuthContext,
   notifyError,
@@ -12,6 +12,9 @@ const Login = () => {
   const [toggle, setToggle] = useState(false);
   const { login, loginWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+  const redirectTo = location?.state?.from?.pathname || '/';
+  console.log('from login page', redirectTo);
 
   const toggleEyeButton = () => setToggle(!toggle);
 
@@ -26,7 +29,8 @@ const Login = () => {
       .then(() => {
         notifySuccess('Login successful');
 
-        navigate('/');
+        navigate(redirectTo);
+
         // ...
       })
       .catch(error => {
@@ -37,7 +41,7 @@ const Login = () => {
       });
   };
 
-  const googleLogin = () => loginWithGoogle().then(() => navigate('/'));
+  const googleLogin = () => loginWithGoogle().then(() => navigate(redirectTo));
 
   return (
     <div className="flex justify-center items-center min-h-100vh bg-accent">
