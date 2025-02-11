@@ -13,4 +13,18 @@ export default {
     },
   },
   plugins: [daisyui],
+  daisyui: {
+    themes: [
+      {
+        myTheme: {
+          primary: '#8D0B41',
+          secondary: '#D39D55',
+          tertiary: '#D6CFB4',
+          accent: '#FFF8E6',
+        },
+      },
+      'light',
+      'dark',
+    ],
+  },
 };

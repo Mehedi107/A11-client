@@ -12,10 +12,6 @@ button {
   font-family: 'Lora', serif;
 }
 
-button {
-  border: none;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -27,4 +23,8 @@ button {
 
 .swiper-pagination-bullet-active {
   @apply !bg-tertiary;
+}
+
+.btn {
+  @apply !border-0;
 }
