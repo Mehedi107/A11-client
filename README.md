@@ -1,80 +1,110 @@
-# Project Name: Artifact Vault
+# Artifact Vault
 
-# Live URL: artifact-vault-916d6.web.app
+## Overview
+Artifact Vault is a web application designed for tracking and showcasing historical artifacts such as the Rosetta Stone and Antikythera Mechanism. Users can browse artifacts, view detailed information, and contribute by adding their own entries. The platform also allows users to like artifacts and keep track of their contributions. The application features a user-friendly interface for managing and displaying historical artifacts.
 
-## Purpose
+## Technologies Used
+- **Frontend:** React, Tailwind CSS, DaisyUI
+- **Backend:** Node.js, Express.js, MongoDB
+- **Authentication:** Firebase Authentication & JWT-based authentication
 
-1. **Preservation of History:** Provide a platform to catalog and document historical artifacts, ensuring their details are preserved digitally for future generations.
-2. **Knowledge Sharing:** Enable users to browse and learn about artifacts, including their origins, historical significance, and current locations.
-3. **Community Engagement:** Allow users to contribute by adding their own entries, fostering a collaborative effort to expand the collection.
-4. **Interactive Learning:** Offer an engaging way for enthusiasts, researchers, and students to explore history through detailed descriptions, images, and contextual information.
-5. **Tracking Contributions:** Let contributors track their added artifacts and see the impact of their submissions.
-6. **Encourage Discovery:** Promote exploration of lesser-known artifacts and highlight their historical value.
-7. **Global Accessibility:** Make information about historical artifacts accessible to a worldwide audience.
-8. **Community Recognition:** Provide a platform where discoverers or contributors are credited for their efforts in uncovering and sharing artifacts.
+## Features
+- **Artifact Listings:** Users can browse and explore various historical artifacts.
+- **User Contributions:** Users can add their own artifacts, including descriptions and images.
+- **Likes & Engagement:** Users can like artifacts to show appreciation.
+- **Contribution Tracking:** Users can view and manage their own submitted artifacts.
+- **Authentication:** Secure user authentication using Firebase and JWT.
+- **Responsive UI:** Optimized for both desktop and mobile users.
 
-## Key Features of Historical Artifacts Tracker
+## Dependencies
 
-📖 **Browse Artifacts**
-Discover a rich collection of historical artifacts with detailed descriptions, captivating images, and contextual information about their origins and significance.
+### Core Dependencies
+- **React** – JavaScript library for building UI (`react`, `react-dom`)
+- **React Router DOM** – Client-side navigation and routing (`react-router-dom`)
+- **Axios** – Promise-based HTTP client for API requests (`axios`)
+- **Firebase** – Authentication and backend services (`firebase`)
 
-🔍 **Advanced Search & Filter**
-Easily locate artifacts by applying filters such as type, era, location, or keywords, providing a seamless browsing experience.
+### UI & Styling
+- **Tailwind CSS** – Utility-first CSS framework (`tailwindcss`)
+- **DaisyUI** – Component library for Tailwind CSS (`daisyui`)
+- **PostCSS** – CSS transformations (`postcss`)
+- **Autoprefixer** – Adds vendor prefixes to CSS (`autoprefixer`)
 
-🖼️ **Artifact Details View**
-Dive deep into the story of each artifact with a dedicated page showcasing historical context, discovery details, and current location.
+### Data Management & Sorting
+- **LocalForage** – Client-side storage (`localforage`)
+- **Match Sorter** – Intelligent sorting for search results (`match-sorter`)
+- **Sort By** – Sorting utility (`sort-by`)
 
-✍️ **User Contributions**
-Registered users can add new artifacts to the platform, complete with descriptions, images, and relevant metadata, enriching the community database.
+### SEO & Meta Tags
+- **React Helmet** – Manage document head for SEO (`react-helmet`)
 
-♻️ **Edit & Manage Artifacts**
-Update existing artifact entries with new details or corrections via an intuitive editing interface for better accuracy.
+### Notifications & Alerts
+- **React Hot Toast** – Toast notifications (`react-hot-toast`)
+- **SweetAlert2** – Stylish popup alerts (`sweetalert2`)
 
-🗑️ **Delete Artifacts**
-Remove outdated or duplicate entries with ease, ensuring the database remains clean and reliable.
+### Swipers & Sliders
+- **Swiper** – Sliders and carousels (`swiper`)
 
-💡 **Like and Highlight Artifacts**
-Engage with artifacts by liking your favorites and exploring the most popular or intriguing ones voted by the community.
+## Development Dependencies
+- **Vite** – Fast development build tool (`vite`, `@vitejs/plugin-react`)
+- **ESLint** – JavaScript and React linting (`eslint`, `@eslint/js`, `eslint-plugin-react`, `eslint-plugin-react-hooks`, `eslint-plugin-react-refresh`)
+- **TypeScript Type Definitions** – Type support for React (`@types/react`, `@types/react-dom`)
+- **Globals** – Provides global variables for ESLint (`globals`)
 
-🛠️ **Contribution Tracker**
-View and manage all artifacts contributed by you in a personalized dashboard, tracking your impact on the platform.
+## Installation Guide
 
-🌐 **Interactive Community Platform**
-Foster collaboration among history enthusiasts, researchers, and collectors by sharing insights, discoveries, and contributions.
+Follow these steps to set up and run the project locally.
 
-📊 **Analytics Dashboard (Planned)**
-Gain insights into popular artifact categories, contributor rankings, and platform activity trends (coming soon).
+### **Prerequisites**
+Ensure you have the following installed on your system:
+- **Node.js** (Latest LTS recommended) – [Download & Install](https://nodejs.org/)
+- **Git** – [Download & Install](https://git-scm.com/)
+- **Package Manager**: npm (comes with Node.js) or Yarn
 
-🔔 **Notifications & Updates (Planned)**
-Stay informed about newly added artifacts, feature updates, or community announcements through a robust notification system (coming soon).
+### **Step 1: Clone the Repository**
+Open your terminal and run the following command to clone the project:
+```sh
+git clone https://github.com/Mehedi107/A11-client
+```
 
-## NPM Packages Used
+### **Step 2: Navigate to the Project Directory**
+```sh
+cd artifact-vault
+```
 
-1. axios
-2. firebase
-3. localforage
-4. match-sorter
-5. react
-6. react-dom
-7. react-helmet
-8. react-hot-toast
-9. react-icons
-10. react-router-dom
-11. sort-by
-12. sweetalert2
-13. swiper
-14. DevDependencies
-15. @eslint/js
-16. @types/react
-17. @types/react-dom
-18. @vitejs/plugin-react
-19. autoprefixer
-20. daisyui
-21. eslint
-22. eslint-plugin-react
-23. eslint-plugin-react-hooks
-24. eslint-plugin-react-refresh
-25. globals
-26. postcss
-27. tailwindcss
-28. vite
+### **Step 3: Install Dependencies**
+```sh
+npm install
+```
+or
+```sh
+yarn install
+
+```
+
+### **Step 4: Set Up Environment Variables**
+```env
+VITE_FIREBASE_API_KEY=your_firebase_api_key
+VITE_BACKEND_URL=your_backend_url
+VITE_JWT_SECRET=your_jwt_secret
+
+```
+
+### **Step 5: Start the Development Server**
+```sh
+npm run dev
+
+```
+or 
+```sh
+yarn dev
+
+```
+
+### **Step 6: Build for Production (Optional)**
+```sh
+npm run build
+
+```
+
+### You're all set! 🎉
