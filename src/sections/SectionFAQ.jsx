@@ -38,7 +38,7 @@ const SectionFAQ = () => {
             className="collapse collapse-arrow rounded-none mb-2 border-2 border-secondary"
           >
             <input type="radio" name="my-accordion-2" defaultChecked />
-            <div className="collapse-title text-xl font-medium">
+            <div className="collapse-title md:text-xl font-medium">
               {faq.title}
             </div>
             <div className="collapse-content">

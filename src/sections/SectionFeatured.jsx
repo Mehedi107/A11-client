@@ -13,10 +13,12 @@ const SectionFeatured = () => {
     isLoading,
     isError,
     error,
+    refetch,
   } = useQuery({
     queryKey: ['artifacts'],
     queryFn: async () => (await axiosPublic('/artifacts')).data,
   });
+
   return (
     <div className="bg-tertiary">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-5 py-20">
@@ -25,7 +27,7 @@ const SectionFeatured = () => {
 
         {/* while fetching data */}
         {isLoading && (
-          <div className="h-96 place-items-center grid">
+          <div className="h-72 place-items-center grid">
             <LoadingSpinner />
           </div>
         )}
@@ -41,6 +43,7 @@ const SectionFeatured = () => {
             <FeaturedArtifactCard
               key={content._id}
               content={content}
+              refetch={refetch}
             ></FeaturedArtifactCard>
           ))}
         </div>

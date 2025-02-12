@@ -1,8 +1,9 @@
-import { CiHeart } from 'react-icons/ci';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import BtnLiked from '../buttons/BtnLiked';
 
-const FeaturedArtifactCard = ({ content }) => {
+const FeaturedArtifactCard = ({ content, refetch }) => {
+  // console.log(content, refetch);
   return (
     <div className="card rounded-lg card-compact bg-base-100 shadow-xl">
       <figure>
@@ -12,10 +13,7 @@ const FeaturedArtifactCard = ({ content }) => {
         <h2 className="card-title">{content.name}</h2>
         <p>{content.context.slice(0, 150)}...</p>
         <div className="card-actions justify-between items-center mt-5">
-          <button className="bg-tertiary font-medium py-3 px-4 rounded-md flex gap-2 justify-center items-center">
-            <CiHeart className="text-xl" />
-            Likes {content.likeCount}
-          </button>
+          <BtnLiked item={content} refetch={refetch} />
           <Link
             to={`/artifacts/${content._id}`}
             className="btn bg-primary hover:bg-primary text-accent"
@@ -30,6 +28,7 @@ const FeaturedArtifactCard = ({ content }) => {
 
 FeaturedArtifactCard.propTypes = {
   content: PropTypes.object,
+  refetch: PropTypes.func,
 };
 
 export default FeaturedArtifactCard;
