@@ -3,6 +3,7 @@ import SectionFeatured from '../../sections/SectionFeatured';
 import SectionBanner from '../../sections/SectionBanner';
 import SectionArtifactCategory from '../../sections/SectionArtifactCategory';
 import SectionUserContribution from '../../sections/SectionUserContribution';
+import SectionFAQ from '../../sections/SectionFAQ';
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <SectionFeatured />
       <SectionArtifactCategory />
       <SectionUserContribution />
+      <SectionFAQ />
     </div>
   );
 };

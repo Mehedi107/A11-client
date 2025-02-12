@@ -126,7 +126,7 @@ const Navbar = () => {
             <Link
               onClick={() => signOutUser()}
               to="/"
-              className="btn btn-sm md:btn-md border-none ml-2 bg-secondary text-accent"
+              className="py-2 px-3 md:py-3 md:px-4 rounded font-semibold ml-2 bg-secondary text-accent"
             >
               Logout
             </Link>
@@ -134,7 +134,7 @@ const Navbar = () => {
             <>
               <Link
                 to="/login"
-                className="btn btn-sm md:btn-md border-none bg-secondary text-accent ml-2 hover:text-primary"
+                className="py-2 px-3 md:py-3 md:px-4 rounded font-semibold border-none bg-secondary text-accent focus:text-accent ml-2 hover:text-primary"
               >
                 Login
               </Link>
